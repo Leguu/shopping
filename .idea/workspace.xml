@@ -4,22 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="97b4ebaa-10cf-4e30-946b-a3fd6b90df8f" name="Changes" comment="Add stuff">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/cart.html" beforeDir="false" afterPath="$PROJECT_DIR$/resources/cart.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/fragments/head.html" beforeDir="false" afterPath="$PROJECT_DIR$/resources/fragments/head.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/BaseController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/BaseController.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/CartControllers.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/CartControllers.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/HomeController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/HomeController.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/LoginController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/LoginController.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/ProductControllers.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/ProductControllers.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/domain/Exceptions.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/infrastructure/Exceptions.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/domain/cart/CartRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/cart/CartRepository.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/domain/product/ProductRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/product/ProductRepository.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/domain/user/UserRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/user/UserRepository.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/webapp/parts/head.html" beforeDir="false" />
-    </list>
+    <list default="true" id="97b4ebaa-10cf-4e30-946b-a3fd6b90df8f" name="Changes" comment="Add deletion for carts and error handling" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -209,7 +194,15 @@
       <option name="project" value="LOCAL" />
       <updated>1696561345709</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Add deletion for carts and error handling">
+      <option name="closed" value="true" />
+      <created>1696563275224</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1696563275224</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -217,6 +210,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Add stuff" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add stuff" />
+    <MESSAGE value="Add deletion for carts and error handling" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add deletion for carts and error handling" />
   </component>
 </project>
