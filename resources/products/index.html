@@ -30,6 +30,10 @@
     <button class="btn btn-secondary">Add new product</button>
 </a>
 
+<a href="/products/download" th:if="${user.isAdmin}">
+    <button class="btn btn-secondary">Download catalog</button>
+</a>
+
 </body>
 
 </html>

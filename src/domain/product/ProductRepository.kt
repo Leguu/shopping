@@ -1,7 +1,6 @@
 package domain.product
 
 import domain.Slug
-import infrastructure.AlreadyExists
 import infrastructure.InvalidOperation
 import infrastructure.NotFound
 import jakarta.enterprise.context.ApplicationScoped
@@ -12,6 +11,7 @@ interface ProductRepository {
     fun getProduct(sku: Int): Product
     fun getProductBySlug(slug: String): Product
     fun getAllProducts(): List<Product>
+    fun getProductCatalog() : String
 }
 
 @ApplicationScoped
@@ -27,7 +27,7 @@ class InMemoryProductRepository : ProductRepository {
     override fun createProduct(slugString: String, name: String, description: String, price: Double) {
         val exists = this.products.any { p -> p.slug.inner == slugString }
         if (exists) {
-            throw AlreadyExists()
+            throw InvalidOperation("A product with that slug already exists")
         }
 
         val slug = Slug.fromString(slugString) ?: throw InvalidOperation("The slug isn't valid")
@@ -54,5 +54,15 @@ class InMemoryProductRepository : ProductRepository {
 
     override fun getAllProducts(): List<Product> {
         return products
+    }
+
+    override fun getProductCatalog(): String {
+        val products = getAllProducts()
+
+        val csvLines = products.map { p -> p.toCsvLine() }.toMutableList()
+
+        csvLines.add(0, Product.CSV_HEADER)
+
+        return csvLines.joinToString("\n")
     }
 }

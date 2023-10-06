@@ -12,4 +12,16 @@ class Product(
     override fun toString(): String {
         return name
     }
+
+    fun toCsvLine(): String {
+        return "${sku},\"${name.stripQuotes()}\",\"${description.stripQuotes()}\",${slug},${price}"
+    }
+
+    private fun String.stripQuotes(): String {
+        return replace("\"", "\"\"")
+    }
+
+    companion object {
+        const val CSV_HEADER = "sku,name,description,slug,price"
+    }
 }

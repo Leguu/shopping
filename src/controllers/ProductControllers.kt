@@ -25,6 +25,11 @@ class ServletProduct : BaseController() {
         if (slug == "add") {
             req.AssertIsAdmin()
             return "products/add"
+        } else if (slug == "download") {
+            req.AssertIsAdmin()
+            val productsCatalog = productRepository.getProductCatalog()
+            resp.contentType = "text/csv"
+            resp.writer.write(productsCatalog)
         } else if (slug != null) {
             context.setVariable("product", productRepository.getProductBySlug(slug))
 

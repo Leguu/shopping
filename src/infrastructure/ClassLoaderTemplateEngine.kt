@@ -7,7 +7,7 @@ import org.thymeleaf.templateresolver.ClassLoaderTemplateResolver
 
 
 @ApplicationScoped
-class TemplateEngineProvider : TemplateEngine() {
+class ClassLoaderTemplateEngine : TemplateEngine() {
     init {
         val templateResolver = ClassLoaderTemplateResolver()
         templateResolver.setTemplateMode(TemplateMode.HTML)

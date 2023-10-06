@@ -4,12 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="97b4ebaa-10cf-4e30-946b-a3fd6b90df8f" name="Changes" comment="Fix workspace">
+    <list default="true" id="97b4ebaa-10cf-4e30-946b-a3fd6b90df8f" name="Changes" comment="Add error messages for InvalidOperation">
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/error/404.html" beforeDir="false" afterPath="$PROJECT_DIR$/resources/error/404.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/BaseController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/BaseController.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/products/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/resources/products/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controllers/ProductControllers.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/ProductControllers.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/domain/product/Product.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/product/Product.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/domain/product/ProductRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/product/ProductRepository.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/infrastructure/Exceptions.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/infrastructure/Exceptions.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/webapp/WEB-INF/beans.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/webapp/WEB-INF/web.xml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,7 +86,7 @@
     "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
     "jdk.selected.JAVA_MODULE": "17",
-    "last_opened_file_path": "C:/Users/Legu/IdeaProjects/shopping/resources/error",
+    "last_opened_file_path": "C:/Users/Legu/IdeaProjects/shopping/webapp",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
@@ -152,7 +156,7 @@
       <predefined_log_file id="Tomcat Host Manager Log" />
       <option name="catalinaBase" value="C:\Users\Legu\.SmartTomcat\shopping\shopping" />
       <option name="contextPath" value="/" />
-      <option name="docBase" value="C:\Users\Legu\IdeaProjects\shopping\src\webapp" />
+      <option name="docBase" value="C:\Users\Legu\IdeaProjects\shopping\webapp" />
       <option name="envOptions">
         <map />
       </option>
@@ -166,7 +170,7 @@
         </TomcatInfo>
       </option>
       <option name="vmOptions" value="" />
-      <module name="shopping.main" />
+      <module name="shopping" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -216,7 +220,23 @@
       <option name="project" value="LOCAL" />
       <updated>1696563806833</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Better unknown error handling">
+      <option name="closed" value="true" />
+      <created>1696594283269</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1696594283269</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Add error messages for InvalidOperation">
+      <option name="closed" value="true" />
+      <created>1696594457138</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1696594457138</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -226,6 +246,8 @@
     <MESSAGE value="Add stuff" />
     <MESSAGE value="Add deletion for carts and error handling" />
     <MESSAGE value="Fix workspace" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix workspace" />
+    <MESSAGE value="Better unknown error handling" />
+    <MESSAGE value="Add error messages for InvalidOperation" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add error messages for InvalidOperation" />
   </component>
 </project>
