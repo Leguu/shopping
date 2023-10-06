@@ -1,5 +1,6 @@
 package domain.user
 
+import infrastructure.InvalidOperation
 import infrastructure.NotFound
 import infrastructure.Unauthorized
 import jakarta.enterprise.context.ApplicationScoped
@@ -28,6 +29,7 @@ class InMemoryUserRepository : UserRepository {
     }
 
     override fun validateUsernamePassword(username: String, password: String): User {
+        if (username == "") throw InvalidOperation("You can't log in with an empty username")
         return users.find { u -> u.name == username && u.password == password } ?: throw Unauthorized()
     }
 }

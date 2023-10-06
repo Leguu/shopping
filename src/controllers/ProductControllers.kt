@@ -40,7 +40,7 @@ class ServletProduct : BaseController() {
         val slug = req.getParameter("slug")
         val name = req.getParameter("name")
         val description = req.getParameter("description")
-        val price = req.getParameter("price").toDoubleOrNull() ?: throw InvalidOperation()
+        val price = req.getParameter("price").toDoubleOrNull() ?: throw InvalidOperation("Price isn't a number")
 
         productRepository.createProduct(slug, name, description, price)
 

@@ -13,8 +13,8 @@ class LoginController : BaseController() {
     }
 
     override fun post(req: HttpServletRequest, resp: HttpServletResponse) {
-        val username = req.getParameter("username") ?: throw InvalidOperation()
-        val password = req.getParameter("password") ?: throw InvalidOperation()
+        val username = req.getParameter("username") ?: throw InvalidOperation("Missing username")
+        val password = req.getParameter("password") ?: throw InvalidOperation("Missing password")
 
         req.tryLogin(username, password)
 

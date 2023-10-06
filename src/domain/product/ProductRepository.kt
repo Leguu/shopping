@@ -1,9 +1,9 @@
 package domain.product
 
+import domain.Slug
 import infrastructure.AlreadyExists
 import infrastructure.InvalidOperation
 import infrastructure.NotFound
-import domain.Slug
 import jakarta.enterprise.context.ApplicationScoped
 
 interface ProductRepository {
@@ -30,7 +30,7 @@ class InMemoryProductRepository : ProductRepository {
             throw AlreadyExists()
         }
 
-        val slug = Slug.fromString(slugString) ?: throw InvalidOperation()
+        val slug = Slug.fromString(slugString) ?: throw InvalidOperation("The slug isn't valid")
 
         products.add(Product(skuIndex, slug, name, description, price))
         skuIndex += 1
