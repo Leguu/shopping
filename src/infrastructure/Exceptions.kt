@@ -1,6 +1,4 @@
-package domain
-
-import kotlin.Exception
+package infrastructure
 
 class AlreadyExists : Exception()
 

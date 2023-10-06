@@ -14,6 +14,7 @@
             <h6 class="card-subtitle mb-2 text-body-secondary">$<span th:text="${product.price}"></span></h6>
             <p class="card-text" th:text="${product.description}"></p>
             <a th:href="'/products/'+${product.slug}" class="card-link">Go to product</a>
+            <button th:hx-delete="'/cart/'+${product.sku}" class="btn btn-primary">Remove product from cart</button>
         </div>
     </div>
 </div>

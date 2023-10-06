@@ -4,23 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="97b4ebaa-10cf-4e30-946b-a3fd6b90df8f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/kotlinc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/settings.gradle.kts" afterDir="false" />
+    <list default="true" id="97b4ebaa-10cf-4e30-946b-a3fd6b90df8f" name="Changes" comment="Add stuff">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/cart.html" beforeDir="false" afterPath="$PROJECT_DIR$/resources/cart.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/fragments/head.html" beforeDir="false" afterPath="$PROJECT_DIR$/resources/fragments/head.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/BaseController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/BaseController.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/CartControllers.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/CartControllers.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/HomeController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/HomeController.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/LoginController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/LoginController.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/ProductControllers.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/ProductControllers.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/domain/Exceptions.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/infrastructure/Exceptions.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/domain/cart/CartRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/cart/CartRepository.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/domain/product/ProductRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/product/ProductRepository.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/domain/user/UserRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/user/UserRepository.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/webapp/parts/head.html" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,6 +61,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="KotlinCodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
+  </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
     <option name="FILTER_WARNINGS" value="false" />
@@ -90,7 +91,7 @@
     "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
     "jdk.selected.JAVA_MODULE": "17",
-    "last_opened_file_path": "C:/Users/Legu/IdeaProjects/shopping/src/controllers",
+    "last_opened_file_path": "C:/Users/Legu/IdeaProjects/shopping/resources/error",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
@@ -99,15 +100,16 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Legu\IdeaProjects\shopping\resources\error" />
       <recent name="C:\Users\Legu\IdeaProjects\shopping\src\controllers" />
       <recent name="C:\Users\Legu\IdeaProjects\shopping\resources" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Legu\IdeaProjects\shopping\src\infrastructure" />
       <recent name="C:\Users\Legu\IdeaProjects\shopping\src\domain\cart" />
       <recent name="C:\Users\Legu\IdeaProjects\shopping\resources" />
       <recent name="C:\Users\Legu\IdeaProjects\shopping\resources\pages" />
       <recent name="C:\Users\Legu\IdeaProjects\shopping\resources\pages\products" />
-      <recent name="C:\Users\Legu\IdeaProjects\shopping\src" />
     </key>
     <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
       <recent name="domain.user" />
@@ -199,9 +201,22 @@
       <option name="presentableId" value="Default" />
       <updated>1695675812171</updated>
     </task>
+    <task id="LOCAL-00001" summary="Add stuff">
+      <option name="closed" value="true" />
+      <created>1696561345709</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1696561345709</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="UnknownFeatures">
     <option featureType="dependencySupport" implementationName="executable:docker" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Add stuff" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add stuff" />
   </component>
 </project>

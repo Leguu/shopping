@@ -5,9 +5,12 @@ import jakarta.servlet.http.HttpServletRequest
 import jakarta.servlet.http.HttpServletResponse
 import org.thymeleaf.context.Context
 
-@WebServlet("/")
-class HomeController : BaseController() {
+
+@WebServlet("/error/*")
+class ErrorServlet : BaseController() {
     override fun get(req: HttpServletRequest, resp: HttpServletResponse, context: Context): String {
-        return "index"
+        val errorCode = req.getRouteParameter()
+
+        return "error/${errorCode}"
     }
 }

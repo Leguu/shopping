@@ -1,10 +1,7 @@
 package domain.cart
 
-import domain.NotFound
 import domain.product.Product
 import domain.product.ProductRepository
-import domain.user.User
-import domain.user.UserRepository
 import jakarta.enterprise.context.ApplicationScoped
 import jakarta.inject.Inject
 
@@ -16,7 +13,6 @@ interface CartRepository {
 
 @ApplicationScoped
 class InMemoryCartRepository : CartRepository {
-    @Inject private lateinit var userRepository : UserRepository
     @Inject private lateinit var productRepository: ProductRepository
 
     private val carts: MutableList<Cart> = mutableListOf()

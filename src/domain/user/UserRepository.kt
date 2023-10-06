@@ -1,9 +1,7 @@
-package domain.user;
+package domain.user
 
-import domain.NotFound
-import domain.Slug
-import domain.Unauthorized
-import domain.product.Product
+import infrastructure.NotFound
+import infrastructure.Unauthorized
 import jakarta.enterprise.context.ApplicationScoped
 
 interface UserRepository {

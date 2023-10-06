@@ -1,7 +1,7 @@
 package controllers
 
-import domain.InvalidOperation
-import domain.Unauthorized
+import infrastructure.InvalidOperation
+import infrastructure.Unauthorized
 import jakarta.servlet.annotation.WebServlet
 import jakarta.servlet.http.HttpServletRequest
 import jakarta.servlet.http.HttpServletResponse
@@ -9,9 +9,6 @@ import org.thymeleaf.context.Context
 
 @WebServlet("/products")
 class ProductsServlet : BaseController() {
-    override fun doGet(req: HttpServletRequest, resp: HttpServletResponse) {
-        super.doGet(req, resp)
-    }
 
     override fun get(req: HttpServletRequest, resp: HttpServletResponse, context: Context): String {
         context.setVariable("products", productRepository.getAllProducts())
@@ -22,12 +19,9 @@ class ProductsServlet : BaseController() {
 
 @WebServlet("/products/*")
 class ServletProduct : BaseController() {
-    override fun doGet(req: HttpServletRequest, resp: HttpServletResponse) {
-        super.doGet(req, resp)
-    }
 
     override fun get(req: HttpServletRequest, resp: HttpServletResponse, context: Context): String? {
-        val slug = getParameter(req)
+        val slug = req.getRouteParameter()
 
         if (slug == "add") {
             return "products/add"
@@ -40,8 +34,8 @@ class ServletProduct : BaseController() {
         return null
     }
 
-    override fun doPost(req: HttpServletRequest, resp: HttpServletResponse) {
-        if (!getUserOrAnonymous(req).isAdmin) {
+    override fun post(req: HttpServletRequest, resp: HttpServletResponse) {
+        if (!req.getUserOrAnonymous().isAdmin) {
             throw Unauthorized()
         }
 

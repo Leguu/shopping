@@ -4,18 +4,17 @@ import domain.cart.CartRepository
 import domain.product.ProductRepository
 import domain.user.User
 import domain.user.UserRepository
+import infrastructure.NotFound
+import infrastructure.Unauthorized
 import jakarta.inject.Inject
-import jakarta.servlet.annotation.WebServlet
 import jakarta.servlet.http.HttpServlet
 import jakarta.servlet.http.HttpServletRequest
 import jakarta.servlet.http.HttpServletResponse
-import jakarta.servlet.http.HttpSession
 import org.thymeleaf.ITemplateEngine
 import org.thymeleaf.context.Context
 import org.thymeleaf.context.IContext
-import kotlin.reflect.typeOf
 
-open class BaseController : HttpServlet() {
+abstract class BaseController : HttpServlet() {
     @Inject
     protected lateinit var productRepository: ProductRepository
     @Inject
@@ -27,36 +26,63 @@ open class BaseController : HttpServlet() {
 
     private val userIdAttribute = "userId"
 
-    override fun doGet(req: HttpServletRequest, resp: HttpServletResponse) {
-        val context = getContext(req)
-
-        val templateName = get(req, resp, context)
-
-        if (templateName != null) {
-            process(resp, templateName, context)
+    private fun <T>HttpServletResponse.doWithErrorHandling(doFun: () -> T): T? {
+        try {
+            return doFun()
+        } catch (e: Unauthorized) {
+            sendRedirect("/error/401")
+        } catch (e: NotFound) {
+            sendRedirect("/error/404")
         }
-    }
-
-    open fun get(req: HttpServletRequest, resp: HttpServletResponse, context: Context): String? {
         return null
     }
 
-    private fun getContext(req: HttpServletRequest): Context {
-        val context = Context(req.locale)
-        context.setVariable("user", getUserOrAnonymous(req))
+    override fun doGet(req: HttpServletRequest, resp: HttpServletResponse) {
+        val context = req.getBasicContext()
+
+        val templateName = resp.doWithErrorHandling {
+            get(req, resp, context)
+        }
+
+        if (templateName != null) {
+            resp.process(templateName, context)
+        }
+    }
+
+    override fun doDelete(req: HttpServletRequest, resp: HttpServletResponse) {
+        resp.doWithErrorHandling {
+            delete(req, resp)
+        }
+    }
+
+    override fun doPost(req: HttpServletRequest, resp: HttpServletResponse) {
+        resp.doWithErrorHandling {
+            post(req, resp)
+        }
+    }
+
+    open fun get(req: HttpServletRequest, resp: HttpServletResponse, context: Context): String? { return null }
+
+    open fun post(req: HttpServletRequest, resp: HttpServletResponse) {}
+
+    open fun delete(req: HttpServletRequest, resp: HttpServletResponse) {}
+
+    private fun HttpServletRequest.getBasicContext(): Context {
+        val context = Context(locale)
+        context.setVariable("user", this.getUserOrAnonymous())
         return context
     }
 
-    fun tryLogin(req: HttpServletRequest, username: String, password: String) {
+    fun HttpServletRequest.tryLogin(username: String, password: String) {
         val user = userRepository.validateUsernamePassword(username, password)
 
-        val session = req.getSession(true)
+        val session = this.getSession(true)
 
         session.setAttribute(userIdAttribute, user.id)
     }
 
-    fun getUserOrAnonymous(req: HttpServletRequest): User {
-        val session = req.getSession(true)
+    fun HttpServletRequest.getUserOrAnonymous(): User {
+        val session = this.getSession(true)
         val userId = session.getAttribute(userIdAttribute)
 
         return if (userId !is Int) {
@@ -68,18 +94,12 @@ open class BaseController : HttpServlet() {
         }
     }
 
-    private fun process(res: HttpServletResponse, templateName: String) {
-        val template = templateEngine.process(templateName, Context())
-        res.writer.write(template)
-    }
-
-    private fun process(res: HttpServletResponse, templateName: String, context: IContext) {
+    private fun HttpServletResponse.process(templateName: String, context: IContext) {
         val template = templateEngine.process(templateName, context)
-        res.writer.write(template)
+        writer.write(template)
     }
 
-    fun getParameter(req: HttpServletRequest): String? {
-        val slug = req.pathInfo.split('/').elementAtOrNull(1)
-        return slug
+    fun HttpServletRequest.getRouteParameter(): String? {
+        return pathInfo.split('/').elementAtOrNull(1)
     }
 }

@@ -1,8 +1,8 @@
-package domain.product;
+package domain.product
 
-import domain.AlreadyExists
-import domain.InvalidOperation
-import domain.NotFound
+import infrastructure.AlreadyExists
+import infrastructure.InvalidOperation
+import infrastructure.NotFound
 import domain.Slug
 import jakarta.enterprise.context.ApplicationScoped
 
