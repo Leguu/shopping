@@ -4,7 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="97b4ebaa-10cf-4e30-946b-a3fd6b90df8f" name="Changes" comment="Add deletion for carts and error handling" />
+    <list default="true" id="97b4ebaa-10cf-4e30-946b-a3fd6b90df8f" name="Changes" comment="Fix workspace">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/error/404.html" beforeDir="false" afterPath="$PROJECT_DIR$/resources/error/404.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/BaseController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/BaseController.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/ProductControllers.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/ProductControllers.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/infrastructure/Exceptions.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/infrastructure/Exceptions.kt" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -202,7 +208,15 @@
       <option name="project" value="LOCAL" />
       <updated>1696563275224</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Fix workspace">
+      <option name="closed" value="true" />
+      <created>1696563806833</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1696563806833</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -211,6 +225,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Add stuff" />
     <MESSAGE value="Add deletion for carts and error handling" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add deletion for carts and error handling" />
+    <MESSAGE value="Fix workspace" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix workspace" />
   </component>
 </project>

@@ -1,7 +1,6 @@
 package controllers
 
 import infrastructure.InvalidOperation
-import infrastructure.Unauthorized
 import jakarta.servlet.annotation.WebServlet
 import jakarta.servlet.http.HttpServletRequest
 import jakarta.servlet.http.HttpServletResponse
@@ -24,6 +23,7 @@ class ServletProduct : BaseController() {
         val slug = req.getRouteParameter()
 
         if (slug == "add") {
+            req.AssertIsAdmin()
             return "products/add"
         } else if (slug != null) {
             context.setVariable("product", productRepository.getProductBySlug(slug))
@@ -35,9 +35,7 @@ class ServletProduct : BaseController() {
     }
 
     override fun post(req: HttpServletRequest, resp: HttpServletResponse) {
-        if (!req.getUserOrAnonymous().isAdmin) {
-            throw Unauthorized()
-        }
+        req.AssertIsAdmin()
 
         val slug = req.getParameter("slug")
         val name = req.getParameter("name")

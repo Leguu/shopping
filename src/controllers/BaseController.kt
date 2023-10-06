@@ -13,6 +13,7 @@ import jakarta.servlet.http.HttpServletResponse
 import org.thymeleaf.ITemplateEngine
 import org.thymeleaf.context.Context
 import org.thymeleaf.context.IContext
+import org.thymeleaf.exceptions.TemplateInputException
 
 abstract class BaseController : HttpServlet() {
     @Inject
@@ -26,13 +27,24 @@ abstract class BaseController : HttpServlet() {
 
     private val userIdAttribute = "userId"
 
-    private fun <T>HttpServletResponse.doWithErrorHandling(doFun: () -> T): T? {
+    protected fun HttpServletRequest.AssertIsAdmin() {
+        if(!getUserOrAnonymous().isAdmin) {
+            throw Unauthorized()
+        }
+    }
+
+    private fun <T>HttpServletResponse.doWithErrorHandling(context: Context, doFun: () -> T): T? {
         try {
             return doFun()
         } catch (e: Unauthorized) {
             sendRedirect("/error/401")
         } catch (e: NotFound) {
             sendRedirect("/error/404")
+        } catch (e: TemplateInputException) {
+            sendRedirect("/error/404")
+        } catch (e: Exception) {
+            context.setVariable("exception", e)
+            this.process("/error/500", context)
         }
         return null
     }
@@ -40,23 +52,24 @@ abstract class BaseController : HttpServlet() {
     override fun doGet(req: HttpServletRequest, resp: HttpServletResponse) {
         val context = req.getBasicContext()
 
-        val templateName = resp.doWithErrorHandling {
-            get(req, resp, context)
-        }
-
-        if (templateName != null) {
-            resp.process(templateName, context)
+        resp.doWithErrorHandling(context) {
+            val templateName =  get(req, resp, context)
+            if (templateName != null) {
+                resp.process(templateName, context)
+            }
         }
     }
 
     override fun doDelete(req: HttpServletRequest, resp: HttpServletResponse) {
-        resp.doWithErrorHandling {
+        val context = req.getBasicContext()
+        resp.doWithErrorHandling(context) {
             delete(req, resp)
         }
     }
 
     override fun doPost(req: HttpServletRequest, resp: HttpServletResponse) {
-        resp.doWithErrorHandling {
+        val context = req.getBasicContext()
+        resp.doWithErrorHandling(context) {
             post(req, resp)
         }
     }

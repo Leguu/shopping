@@ -4,15 +4,19 @@
       th:replace="~{fragments/layout :: layout(~{::title}, ~{::body})}">
 
 <head>
-    <title>Not found</title>
+    <title>Internal server error</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 </head>
 
 <body>
 
-<h1>Not found</h1>
+<h1>Internal server error</h1>
 
-<p>The resource you were looking for wasn't found.</p>
+<p>An unknown issue has caused the server to not fulfil your request.</p>
+
+<p>Developer? See error message:</p>
+
+<p th:text="${exception.toString()}"></p>
 
 </body>
 

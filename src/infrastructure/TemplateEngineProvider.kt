@@ -4,7 +4,6 @@ import jakarta.enterprise.context.ApplicationScoped
 import org.thymeleaf.TemplateEngine
 import org.thymeleaf.templatemode.TemplateMode
 import org.thymeleaf.templateresolver.ClassLoaderTemplateResolver
-import org.thymeleaf.templateresolver.FileTemplateResolver
 
 
 @ApplicationScoped
