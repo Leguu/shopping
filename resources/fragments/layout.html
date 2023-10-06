@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html th:fragment="layout (title, content)" xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <title th:replace="${title}">Ye Shoppe</title>
+    <meta th:replace="~{fragments/head :: head}"></meta>
+</head>
+<body>
+<div th:replace="~{fragments/navbar :: navbar}"></div>
+
+<div class="p-4">
+    <div th:replace="${content}"></div>
+</div>
+
+<div th:replace="~{fragments/head :: body}"></div>
+</body>
+</html>

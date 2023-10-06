@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" th:replace="~{fragments/layout :: layout(~{::title}, ~{::body})}">
+<head>
+    <meta charset="UTF-8">
+    <title>Add a product</title>
+</head>
+<body>
+<form method="post" class="container-sm">
+    <div style="display: flex; flex-direction: column">
+        <label class="form-label">
+            Name
+            <input required name="name" class="form-control" />
+        </label>
+        <label class="form-label">
+            Description
+            <input required name="description" class="form-control" />
+        </label>
+        <label class="form-label">
+            Price
+            <input required name="price" type="number" class="form-control" />
+        </label>
+        <label class="form-label">
+            Slug
+            <input required name="slug" class="form-control" />
+        </label>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+</form>
+
+</body>
+</html>

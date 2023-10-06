@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" th:replace="~{fragments/layout :: layout(~{::title}, ~{::body})}">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="'Product ' + ${product.name}"></title>
+</head>
+<body>
+<h1 th:text="${product.name}"></h1>
+<p th:text="${product.description}"></p>
+
+<p>Price:
+    <span th:text="${product.price}"></span>
+</p>
+
+<a href="/products">Back</a>
+
+<form method="post" th:action="'/cart/'+${product.sku}">
+    <button type="submit" class="btn btn-primary">Add product to cart</button>
+</form>
+
+</body>
+</html>

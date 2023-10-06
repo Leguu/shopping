@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml"
+      th:replace="~{fragments/layout :: layout(~{::title}, ~{::body})}">
+
+<head>
+    <title>All products</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+
+<body>
+
+<h1>Products</h1>
+
+<div style="display: flex; flex-direction: row; flex-gap: 8px">
+    <div class="card" style="width: 18rem;" th:each="product: ${products}">
+        <div class="card-body">
+            <h5 class="card-title" th:text="${product.name}">Card title</h5>
+            <h6 class="card-subtitle mb-2 text-body-secondary">$<span th:text="${product.price}"></span></h6>
+            <p class="card-text" th:text="${product.description}"></p>
+            <a th:href="'/products/'+${product.slug}" class="card-link">Go to product</a>
+            <form method="post" th:action="'/cart/'+${product.sku}">
+                <button type="submit" class="btn btn-primary">Add product to cart</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<a href="/products/add" th:if="${user.isAdmin}">
+    <button class="btn btn-secondary">Add new product</button>
+</a>
+
+</body>
+
+</html>
