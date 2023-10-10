@@ -4,16 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="97b4ebaa-10cf-4e30-946b-a3fd6b90df8f" name="Changes" comment="Add error messages for InvalidOperation">
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+    <list default="true" id="97b4ebaa-10cf-4e30-946b-a3fd6b90df8f" name="Changes" comment="Add product catalog">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/products/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/resources/products/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/cart.html" beforeDir="false" afterPath="$PROJECT_DIR$/resources/cart.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/BaseController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/BaseController.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/CartControllers.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/CartControllers.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controllers/ProductControllers.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/ProductControllers.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/domain/product/Product.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/product/Product.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/domain/product/ProductRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/product/ProductRepository.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/infrastructure/Exceptions.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/infrastructure/Exceptions.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/webapp/WEB-INF/beans.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/webapp/WEB-INF/web.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/WEB-INF/beans.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/webapp/WEB-INF/beans.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/webapp/WEB-INF/web.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,7 +85,7 @@
     "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
     "jdk.selected.JAVA_MODULE": "17",
-    "last_opened_file_path": "C:/Users/Legu/IdeaProjects/shopping/webapp",
+    "last_opened_file_path": "C:/Users/Legu/.SmartTomcat/shopping",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
@@ -100,11 +99,11 @@
       <recent name="C:\Users\Legu\IdeaProjects\shopping\resources" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Legu\IdeaProjects\shopping\src" />
       <recent name="C:\Users\Legu\IdeaProjects\shopping\src\infrastructure" />
       <recent name="C:\Users\Legu\IdeaProjects\shopping\src\domain\cart" />
       <recent name="C:\Users\Legu\IdeaProjects\shopping\resources" />
       <recent name="C:\Users\Legu\IdeaProjects\shopping\resources\pages" />
-      <recent name="C:\Users\Legu\IdeaProjects\shopping\resources\pages\products" />
     </key>
     <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
       <recent name="domain.user" />
@@ -119,12 +118,100 @@
     </key>
   </component>
   <component name="RunManager" selected="Smart Tomcat.Tomcat 10">
+    <configuration name="shopping [buildDependents]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="buildDependents" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="shopping [buildKotlinToolingMetadata]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="buildKotlinToolingMetadata" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="shopping [buildNeeded]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="buildNeeded" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="shopping [testClasses]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="testClasses" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
     <configuration name="shopping [war]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
+        <option name="scriptParameters" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -141,22 +228,15 @@
       <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="MainKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="MainKt" />
-      <module name="shopping.main" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="Tomcat 10" type="com.poratu.idea.plugins.tomcat">
       <predefined_log_file enabled="true" id="Tomcat Localhost Log" />
       <predefined_log_file enabled="true" id="Tomcat Access Log" />
       <predefined_log_file id="Tomcat Catalina Log" />
       <predefined_log_file id="Tomcat Manager Log" />
       <predefined_log_file id="Tomcat Host Manager Log" />
-      <option name="catalinaBase" value="C:\Users\Legu\.SmartTomcat\shopping\shopping" />
+      <option name="catalinaBase" value="C:\Users\Legu\.SmartTomcat\shopping" />
       <option name="contextPath" value="/" />
-      <option name="docBase" value="C:\Users\Legu\IdeaProjects\shopping\webapp" />
+      <option name="docBase" value="C:\Users\Legu\IdeaProjects\shopping\src\webapp" />
       <option name="envOptions">
         <map />
       </option>
@@ -170,20 +250,26 @@
         </TomcatInfo>
       </option>
       <option name="vmOptions" value="" />
-      <module name="shopping" />
+      <module name="shopping.main" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
+      <item itemvalue="Gradle.shopping [buildDependents]" />
+      <item itemvalue="Gradle.shopping [buildKotlinToolingMetadata]" />
+      <item itemvalue="Gradle.shopping [buildNeeded]" />
+      <item itemvalue="Gradle.shopping [testClasses]" />
       <item itemvalue="Gradle.shopping [war]" />
-      <item itemvalue="Kotlin.MainKt" />
       <item itemvalue="Smart Tomcat.Tomcat 10" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.shopping [war]" />
-        <item itemvalue="Kotlin.MainKt" />
+        <item itemvalue="Gradle.shopping [testClasses]" />
+        <item itemvalue="Gradle.shopping [buildNeeded]" />
+        <item itemvalue="Gradle.shopping [buildKotlinToolingMetadata]" />
+        <item itemvalue="Gradle.shopping [buildDependents]" />
       </list>
     </recent_temporary>
   </component>
@@ -236,7 +322,15 @@
       <option name="project" value="LOCAL" />
       <updated>1696594457138</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Add product catalog">
+      <option name="closed" value="true" />
+      <created>1696628478394</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1696628478394</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -248,6 +342,7 @@
     <MESSAGE value="Fix workspace" />
     <MESSAGE value="Better unknown error handling" />
     <MESSAGE value="Add error messages for InvalidOperation" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add error messages for InvalidOperation" />
+    <MESSAGE value="Add product catalog" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add product catalog" />
   </component>
 </project>

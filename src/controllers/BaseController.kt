@@ -27,7 +27,7 @@ abstract class BaseController : HttpServlet() {
 
     private val userIdAttribute = "userId"
 
-    protected fun HttpServletRequest.AssertIsAdmin() {
+    protected fun HttpServletRequest.assertIsAdmin() {
         if(!getUserOrAnonymous().isAdmin) {
             throw Unauthorized()
         }

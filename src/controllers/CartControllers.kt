@@ -51,6 +51,6 @@ class CartServlet : BaseController() {
 
         cartRepository.removeProductFromCart(user.id, sku)
 
-        resp.sendRedirect("/cart")
+        resp.setHeader("HX-Refresh", "true")
     }
 }

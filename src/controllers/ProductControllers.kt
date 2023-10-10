@@ -23,10 +23,10 @@ class ServletProduct : BaseController() {
         val slug = req.getRouteParameter()
 
         if (slug == "add") {
-            req.AssertIsAdmin()
+            req.assertIsAdmin()
             return "products/add"
         } else if (slug == "download") {
-            req.AssertIsAdmin()
+            req.assertIsAdmin()
             val productsCatalog = productRepository.getProductCatalog()
             resp.contentType = "text/csv"
             resp.writer.write(productsCatalog)
@@ -40,7 +40,7 @@ class ServletProduct : BaseController() {
     }
 
     override fun post(req: HttpServletRequest, resp: HttpServletResponse) {
-        req.AssertIsAdmin()
+        req.assertIsAdmin()
 
         val slug = req.getParameter("slug")
         val name = req.getParameter("name")

@@ -1,7 +1,6 @@
 plugins {
     kotlin("jvm") version "1.9.0"
     war
-    application
 }
 
 group = "legu.dev"
@@ -30,10 +29,6 @@ sourceSets {
             setSrcDirs(listOf("resources"))
         }
     }
-}
-
-tasks.test {
-    useJUnitPlatform()
 }
 
 kotlin {
