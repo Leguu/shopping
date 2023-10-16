@@ -4,16 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="97b4ebaa-10cf-4e30-946b-a3fd6b90df8f" name="Changes" comment="Add product catalog">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/cart.html" beforeDir="false" afterPath="$PROJECT_DIR$/resources/cart.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/BaseController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/BaseController.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/CartControllers.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/CartControllers.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/ProductControllers.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/ProductControllers.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webapp/WEB-INF/beans.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/webapp/WEB-INF/beans.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/webapp/WEB-INF/web.xml" afterDir="false" />
-    </list>
+    <list default="true" id="97b4ebaa-10cf-4e30-946b-a3fd6b90df8f" name="Changes" comment="webapp needs to be in src" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -330,7 +321,15 @@
       <option name="project" value="LOCAL" />
       <updated>1696628478394</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="webapp needs to be in src">
+      <option name="closed" value="true" />
+      <created>1696964648511</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1696964648511</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -343,6 +342,7 @@
     <MESSAGE value="Better unknown error handling" />
     <MESSAGE value="Add error messages for InvalidOperation" />
     <MESSAGE value="Add product catalog" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add product catalog" />
+    <MESSAGE value="webapp needs to be in src" />
+    <option name="LAST_COMMIT_MESSAGE" value="webapp needs to be in src" />
   </component>
 </project>
