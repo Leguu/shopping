@@ -74,11 +74,20 @@ abstract class BaseController : HttpServlet() {
         }
     }
 
+    override fun doPut(req: HttpServletRequest, resp: HttpServletResponse) {
+        val context = req.getBasicContext()
+        resp.doWithErrorHandling(context) {
+            put(req, resp)
+        }
+    }
+
     open fun get(req: HttpServletRequest, resp: HttpServletResponse, context: Context): String? { return null }
 
     open fun post(req: HttpServletRequest, resp: HttpServletResponse) {}
 
     open fun delete(req: HttpServletRequest, resp: HttpServletResponse) {}
+
+    open fun put(req: HttpServletRequest, resp: HttpServletResponse) {}
 
     private fun HttpServletRequest.getBasicContext(): Context {
         val context = Context(locale)
@@ -113,10 +122,16 @@ abstract class BaseController : HttpServlet() {
     }
 
     fun HttpServletRequest.getRouteParameters(): List<String> {
-        return pathInfo.split('/').drop(1)
+        return pathInfo.trim('/').split('/')
     }
 
-    fun HttpServletRequest.getRouteParameter(): String? {
-        return pathInfo.split('/').elementAtOrNull(1)
+    fun HttpServletRequest.getRouteParameter(): String {
+        val param = getRouteParameters().joinToString("/")
+
+        if (param.isBlank()) {
+            throw NotFound()
+        }
+
+        return param
     }
 }
