@@ -4,7 +4,7 @@ plugins {
 }
 
 group = "legu.dev"
-version = "1.0-SNAPSHOT"
+version = ""
 
 repositories {
     mavenCentral()
@@ -15,6 +15,8 @@ dependencies {
 
     implementation("org.thymeleaf:thymeleaf:3.1.2.RELEASE")
 
+    compileOnly("jakarta.enterprise:jakarta.enterprise.cdi-api:4.0.1")
+    implementation("org.jboss:jandex:3.1.5") // Speed up CDI discovery
     implementation("org.jboss.weld.servlet:weld-servlet-core:5.1.1.SP2")
 
     implementation(kotlin("stdlib-jdk8"))

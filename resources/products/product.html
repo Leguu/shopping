@@ -14,6 +14,10 @@
 
 <a href="/products">Back</a>
 
+<a th:href="'/products/' + ${product.slug} + '/edit'" th:if="${user.isAdmin}">
+    <button class="btn btn-secondary">Edit</button>
+</a>
+
 <form method="post" th:action="'/cart/'+${product.sku}">
     <button type="submit" class="btn btn-primary">Add product to cart</button>
 </form>

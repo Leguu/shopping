@@ -2,8 +2,9 @@ package domain.cart
 
 import domain.product.Product
 import domain.product.ProductRepository
-import jakarta.enterprise.context.ApplicationScoped
 import jakarta.inject.Inject
+import jakarta.inject.Named
+import jakarta.inject.Singleton
 
 interface CartRepository {
     fun addProductToCart(userId: Int, sku: Int)
@@ -11,7 +12,8 @@ interface CartRepository {
     fun getUserCart(userId: Int): List<Product>
 }
 
-@ApplicationScoped
+@Named("InMemoryCartRepository")
+@Singleton
 class InMemoryCartRepository : CartRepository {
     @Inject private lateinit var productRepository: ProductRepository
 

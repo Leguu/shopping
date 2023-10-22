@@ -112,6 +112,10 @@ abstract class BaseController : HttpServlet() {
         writer.write(template)
     }
 
+    fun HttpServletRequest.getRouteParameters(): List<String> {
+        return pathInfo.split('/').drop(1)
+    }
+
     fun HttpServletRequest.getRouteParameter(): String? {
         return pathInfo.split('/').elementAtOrNull(1)
     }

@@ -4,9 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="97b4ebaa-10cf-4e30-946b-a3fd6b90df8f" name="Changes" comment="workspace.xml changes">
+    <list default="true" id="97b4ebaa-10cf-4e30-946b-a3fd6b90df8f" name="Changes" comment="Fix weld">
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/products/product.html" beforeDir="false" afterPath="$PROJECT_DIR$/resources/products/product.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/BaseController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/BaseController.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/ProductControllers.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/ProductControllers.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/domain/cart/CartRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/cart/CartRepository.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/domain/product/ProductRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/product/ProductRepository.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/domain/user/UserRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/user/UserRepository.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/webapp/META-INF/context.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/webapp/WEB-INF/beans.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/webapp/WEB-INF/web.xml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,6 +84,9 @@
     <option name="FILTER_DEBUG" value="true" />
     <option name="CUSTOM_FILTER" />
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4
 }</component>
@@ -90,11 +104,10 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "android.gradle.sync.needed": "true",
     "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
     "jdk.selected.JAVA_MODULE": "17",
-    "last_opened_file_path": "C:/Users/Legu/.SmartTomcat/shopping",
+    "last_opened_file_path": "C:/Users/Legu/IdeaProjects/shopping/resources/products",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
@@ -103,6 +116,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Legu\IdeaProjects\shopping\resources\products" />
       <recent name="C:\Users\Legu\IdeaProjects\shopping\resources\error" />
       <recent name="C:\Users\Legu\IdeaProjects\shopping\src\controllers" />
       <recent name="C:\Users\Legu\IdeaProjects\shopping\resources" />
@@ -127,28 +141,6 @@
     </key>
   </component>
   <component name="RunManager" selected="Smart Tomcat.Tomcat 10">
-    <configuration name="shopping [buildDependents]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="buildDependents" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>false</RunAsTest>
-      <method v="2" />
-    </configuration>
     <configuration name="shopping [buildKotlinToolingMetadata]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -183,6 +175,28 @@
         <option name="taskNames">
           <list>
             <option value="buildNeeded" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="shopping [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="clean" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -245,7 +259,10 @@
       <predefined_log_file id="Tomcat Host Manager Log" />
       <option name="catalinaBase" value="C:\Users\Legu\.SmartTomcat\shopping" />
       <option name="contextPath" value="/" />
-      <option name="docBase" value="C:\Users\Legu\IdeaProjects\shopping\src\webapp" />
+      <option name="docBase" value="C:\Users\Legu\IdeaProjects\shopping\src\main\webapp" />
+      <option name="envOptions">
+        <map />
+      </option>
       <option name="extraClassPath" value="" />
       <option name="port" value="4433" />
       <option name="tomcatInfo">
@@ -262,7 +279,7 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Gradle.shopping [buildDependents]" />
+      <item itemvalue="Gradle.shopping [clean]" />
       <item itemvalue="Gradle.shopping [buildKotlinToolingMetadata]" />
       <item itemvalue="Gradle.shopping [buildNeeded]" />
       <item itemvalue="Gradle.shopping [testClasses]" />
@@ -272,10 +289,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.shopping [war]" />
+        <item itemvalue="Gradle.shopping [clean]" />
         <item itemvalue="Gradle.shopping [testClasses]" />
         <item itemvalue="Gradle.shopping [buildNeeded]" />
         <item itemvalue="Gradle.shopping [buildKotlinToolingMetadata]" />
-        <item itemvalue="Gradle.shopping [buildDependents]" />
       </list>
     </recent_temporary>
   </component>
@@ -352,7 +369,15 @@
       <option name="project" value="LOCAL" />
       <updated>1697414411832</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Fix weld">
+      <option name="closed" value="true" />
+      <created>1697994827902</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1697994827903</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -367,6 +392,7 @@
     <MESSAGE value="Add product catalog" />
     <MESSAGE value="webapp needs to be in src" />
     <MESSAGE value="workspace.xml changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="workspace.xml changes" />
+    <MESSAGE value="Fix weld" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix weld" />
   </component>
 </project>

@@ -3,7 +3,8 @@ package domain.user
 import infrastructure.InvalidOperation
 import infrastructure.NotFound
 import infrastructure.Unauthorized
-import jakarta.enterprise.context.ApplicationScoped
+import jakarta.inject.Named
+import jakarta.inject.Singleton
 
 interface UserRepository {
     fun getUserById(id: Int): User
@@ -11,11 +12,12 @@ interface UserRepository {
     fun validateUsernamePassword(username: String, password: String): User
 }
 
-@ApplicationScoped
+@Named("InMemoryUserRepository")
+@Singleton
 class InMemoryUserRepository : UserRepository {
     private var idIndex: Int = 1
     private val users: MutableList<User> = mutableListOf(
-        User(idIndex++, "Admin", "secret", true)
+        User(idIndex++, "admin", "secret", true)
     )
 
     override fun getUserById(id: Int): User {

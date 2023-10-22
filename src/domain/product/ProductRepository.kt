@@ -3,18 +3,20 @@ package domain.product
 import domain.Slug
 import infrastructure.InvalidOperation
 import infrastructure.NotFound
-import jakarta.enterprise.context.ApplicationScoped
+import jakarta.inject.Named
+import jakarta.inject.Singleton
 
 interface ProductRepository {
     fun createProduct(slugString: String, name: String, description: String, price: Double)
-    fun updateProduct(sku: Int, input: Product)
+    fun updateProduct(sku: Int, name: String, description: String, price: Double)
     fun getProduct(sku: Int): Product
     fun getProductBySlug(slug: String): Product
     fun getAllProducts(): List<Product>
     fun getProductCatalog() : String
 }
 
-@ApplicationScoped
+@Named("InMemoryProductRepository")
+@Singleton
 class InMemoryProductRepository : ProductRepository {
 
     private var skuIndex: Int = 1
@@ -36,12 +38,12 @@ class InMemoryProductRepository : ProductRepository {
         skuIndex += 1
     }
 
-    override fun updateProduct(sku: Int, input: Product) {
+    override fun updateProduct(sku: Int, name: String, description: String, price: Double) {
         val exitingProduct = products.find { p -> p.sku == sku } ?: throw NotFound()
 
-        exitingProduct.name = input.name
-        exitingProduct.description = input.description
-        exitingProduct.price = input.price
+        exitingProduct.name = name
+        exitingProduct.description = description
+        exitingProduct.price = price
     }
 
     override fun getProduct(sku: Int): Product {
