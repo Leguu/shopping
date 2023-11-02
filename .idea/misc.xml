@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="EntryPointsManager">
-    <list size="3">
-      <item index="0" class="java.lang.String" itemvalue="jakarta.enterprise.context.ApplicationScoped" />
-      <item index="1" class="java.lang.String" itemvalue="jakarta.inject.Singleton" />
-      <item index="2" class="java.lang.String" itemvalue="jakarta.servlet.annotation.WebServlet" />
+    <list size="5">
+      <item index="0" class="java.lang.String" itemvalue="infrastructure.Obsolete" />
+      <item index="1" class="java.lang.String" itemvalue="jakarta.enterprise.context.ApplicationScoped" />
+      <item index="2" class="java.lang.String" itemvalue="jakarta.enterprise.inject.Vetoed" />
+      <item index="3" class="java.lang.String" itemvalue="jakarta.inject.Singleton" />
+      <item index="4" class="java.lang.String" itemvalue="jakarta.servlet.annotation.WebServlet" />
     </list>
   </component>
   <component name="ExternalStorageConfigurationManager" enabled="true" />

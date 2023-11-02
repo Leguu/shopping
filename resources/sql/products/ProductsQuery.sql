@@ -1,0 +1,1 @@
+SELECT id, slug, name, description, price FROM products;

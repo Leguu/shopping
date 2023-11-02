@@ -1,0 +1,1 @@
+SELECT id, name, password, isAdmin FROM Users WHERE name = ? AND password = ?;

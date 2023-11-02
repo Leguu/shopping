@@ -4,6 +4,8 @@ import domain.cart.CartRepository
 import domain.product.ProductRepository
 import domain.user.User
 import domain.user.UserRepository
+import infrastructure.CookieUtils.Companion.getCookie
+import infrastructure.CookieUtils.Companion.setCookie
 import infrastructure.NotFound
 import infrastructure.Unauthorized
 import jakarta.inject.Inject
@@ -28,7 +30,7 @@ abstract class BaseController : HttpServlet() {
     private val userIdAttribute = "userId"
 
     protected fun HttpServletRequest.assertIsAdmin() {
-        if(!getUserOrAnonymous().isAdmin) {
+        if(getUser()?.isAdmin != true) {
             throw Unauthorized()
         }
     }
@@ -50,7 +52,7 @@ abstract class BaseController : HttpServlet() {
     }
 
     override fun doGet(req: HttpServletRequest, resp: HttpServletResponse) {
-        val context = req.getBasicContext()
+        val context = getBasicContext(req, resp)
 
         resp.doWithErrorHandling(context) {
             val templateName =  get(req, resp, context)
@@ -61,21 +63,21 @@ abstract class BaseController : HttpServlet() {
     }
 
     override fun doDelete(req: HttpServletRequest, resp: HttpServletResponse) {
-        val context = req.getBasicContext()
+        val context = getBasicContext(req, resp)
         resp.doWithErrorHandling(context) {
             delete(req, resp)
         }
     }
 
     override fun doPost(req: HttpServletRequest, resp: HttpServletResponse) {
-        val context = req.getBasicContext()
+        val context = getBasicContext(req, resp)
         resp.doWithErrorHandling(context) {
             post(req, resp)
         }
     }
 
     override fun doPut(req: HttpServletRequest, resp: HttpServletResponse) {
-        val context = req.getBasicContext()
+        val context = getBasicContext(req, resp)
         resp.doWithErrorHandling(context) {
             put(req, resp)
         }
@@ -89,31 +91,24 @@ abstract class BaseController : HttpServlet() {
 
     open fun put(req: HttpServletRequest, resp: HttpServletResponse) {}
 
-    private fun HttpServletRequest.getBasicContext(): Context {
-        val context = Context(locale)
-        context.setVariable("user", this.getUserOrAnonymous())
+    private fun getBasicContext(req: HttpServletRequest, resp: HttpServletResponse): Context {
+        val context = Context(req.locale)
+        context.setVariable("user", req.getUser() ?: User(0, "", "", false))
         return context
     }
 
-    fun HttpServletRequest.tryLogin(username: String, password: String) {
+    fun HttpServletResponse.tryLogin(username: String, password: String) {
         val user = userRepository.validateUsernamePassword(username, password)
 
-        val session = this.getSession(true)
-
-        session.setAttribute(userIdAttribute, user.id)
+        this.setCookie(userIdAttribute, user.id)
     }
 
-    fun HttpServletRequest.getUserOrAnonymous(): User {
-        val session = this.getSession(true)
-        val userId = session.getAttribute(userIdAttribute)
+    fun HttpServletRequest.getUser(): User? {
+        val userId = this.getCookie<Int>(userIdAttribute)
 
-        return if (userId !is Int) {
-            val user = userRepository.createUser()
-            session.setAttribute(userIdAttribute, user.id)
-            user
-        } else {
+        return if (userId is Int) {
             userRepository.getUserById(userId)
-        }
+        } else null
     }
 
     private fun HttpServletResponse.process(templateName: String, context: IContext) {

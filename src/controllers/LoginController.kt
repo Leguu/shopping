@@ -16,7 +16,7 @@ class LoginController : BaseController() {
         val username = req.getParameter("username") ?: throw InvalidOperation("Missing username")
         val password = req.getParameter("password") ?: throw InvalidOperation("Missing password")
 
-        req.tryLogin(username, password)
+        resp.tryLogin(username, password)
 
         resp.sendRedirect("/")
     }
