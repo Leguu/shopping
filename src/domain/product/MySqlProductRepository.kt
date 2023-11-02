@@ -20,7 +20,11 @@ class MySqlProductRepository : ProductRepository, ResourceDatabaseTableInitializ
     }
 
     override fun updateProduct(sku: Int, name: String, description: String, price: Double) {
-        TODO("Not yet implemented")
+        MySqlDatabase().use { db ->
+            db.updateSql("update products " +
+                    "set name = ?, description = ?, price = ? " +
+                    "where id = ?;", name, description, price, sku)
+        }
     }
 
     override fun getProduct(sku: Int): Product {
