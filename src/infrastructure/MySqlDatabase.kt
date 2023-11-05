@@ -7,7 +7,7 @@ import java.sql.PreparedStatement
 import java.sql.ResultSet
 
 class MySqlDatabase : Closeable {
-    private var con: Connection;
+    var con: Connection;
 
     init {
         Class.forName("com.mysql.cj.jdbc.Driver")
@@ -72,13 +72,13 @@ class MySqlDatabase : Closeable {
         statement.executeBatch()
     }
 
-    private fun PreparedStatement.set(index: Int, variable: Any) {
-        val reassigned = index + 1
-        when (variable) {
-            is String -> this.setString(reassigned, variable)
-            is Int -> this.setInt(reassigned, variable)
-            is Double -> this.setDouble(reassigned, variable)
-            else -> throw NotImplementedError()
-        }
+}
+fun PreparedStatement.set(index: Int, variable: Any) {
+    val reassigned = index + 1
+    when (variable) {
+        is String -> this.setString(reassigned, variable)
+        is Int -> this.setInt(reassigned, variable)
+        is Double -> this.setDouble(reassigned, variable)
+        else -> throw NotImplementedError()
     }
 }

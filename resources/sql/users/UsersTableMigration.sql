@@ -5,5 +5,3 @@ CREATE TABLE IF NOT EXISTS Users (
 	isAdmin boolean not null,
     PRIMARY KEY (id)
 );
-
-REPLACE INTO Users VALUES (1, "admin", "secret", 1);

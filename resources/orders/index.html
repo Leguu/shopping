@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml"
+    th:replace="~{fragments/layout :: layout(~{::title}, ~{::body})}">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Orders</title>
+</head>
+
+<body>
+    <h1>Orders</h1>
+
+    <div style="display: flex; flex-direction: row; flex-gap: 8px">
+        <div class="card" style="width: 18rem;" th:each="order: ${orders}">
+            <div class="card-body">
+                <h5 class="card-title">Order ID: <span th:text="${order.orderId}"></span></h5>
+                <h6 class="card-subtitle mb-2 text-body-secondary" th:text="${order.address}"></h6>
+
+                <p th:if="${order.trackingId}">Shipped!</p>
+                <p th:unless="${order.trackingId}">Not shipped yet</p>
+
+                <a th:href="'/orders/'+${order.orderId}" class="card-link">Go to order</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

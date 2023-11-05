@@ -30,13 +30,16 @@ class CartsServlet : BaseController() {
     override fun get(req: HttpServletRequest, resp: HttpServletResponse, context: Context): String {
         val user = req.getUser()
 
+        val products = this.productRepository.getAllProducts()
+
         if (user == null) {
             val cart = req.getCartOrAnonymous()
-            val products = this.productRepository.getAllProducts()
             val cartProducts = cart.map { it.productId }.map { products.find { p -> p.sku == it } }
             context.setVariable("cart", cartProducts)
         } else {
-            context.setVariable("cart", cartRepository.getUserCart(user.id))
+            val cart = cartRepository.getUserCart(user.id)
+            val cartProducts = cart.products.map { it.productId }.map { products.find { p -> p.sku == it } }
+            context.setVariable("cart", cartProducts)
         }
 
         return "cart"

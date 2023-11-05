@@ -1,28 +1,28 @@
 <!DOCTYPE html>
 
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml"
-      th:replace="~{fragments/layout :: layout(~{::title}, ~{::body})}">
+    th:replace="~{fragments/layout :: layout(~{::title}, ~{::body})}">
 
 <head>
-    <title>All products</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Login</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 
 <body>
 
-<form method="post">
-    <label>
-        Username
-        <input name="username" />
-    </label>
+    <form method="post">
+        <label>
+            Username
+            <input name="username" />
+        </label>
 
-    <label>
-        Password
-        <input name="password" type="password" />
-    </label>
+        <label>
+            Password
+            <input name="password" type="password" />
+        </label>
 
-    <button type="submit">Login</button>
-</form>
+        <button type="submit">Login</button>
+    </form>
 
 </body>
 

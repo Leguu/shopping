@@ -8,12 +8,12 @@ import kotlinx.serialization.json.Json
 
 class CookieUtils {
     companion object {
-        inline fun <reified T>HttpServletResponse.setCookie(key: String, value: T) {
+        inline fun <reified T> HttpServletResponse.setCookie(key: String, value: T?) {
             val cookie = Cookie(key, Json.encodeToString(value))
             this.addCookie(cookie)
         }
 
-        inline fun <reified T>HttpServletRequest.getCookie(key: String): T? {
+        inline fun <reified T> HttpServletRequest.getCookie(key: String): T? {
             val cookie = this.cookies.find { c -> c.name == key } ?: return null
 
             return try {

@@ -13,9 +13,12 @@ class MySqlCartRepository : CartRepository, ResourceDatabaseTableInitializer(lis
             val currentValue = db.querySql("select (quantity) from UserProductCart where userId = ? and productId = ?;", userId, sku)
             if (currentValue.next()) {
                 val quantity = currentValue.getInt("quantity")
-                db.update("carts/AddProductToCartMutation", sku, quantity + 1)
+                db.updateSql("update UserProductCart " +
+                        "set quantity = ? " +
+                        "where productId = ? and userId = ?;", quantity + 1, sku, userId)
             } else {
-                db.update("carts/AddProductToCartMutation", sku, 1)
+                db.updateSql("insert into UserProductCart (userId, productId, quantity) " +
+                        "values (?, ?, ?);", userId, sku, 1)
             }
         }
     }
@@ -29,7 +32,7 @@ class MySqlCartRepository : CartRepository, ResourceDatabaseTableInitializer(lis
     override fun getUserCart(userId: Int): Cart {
         val result = mutableListOf<UserProductCart>()
         MySqlDatabase().use { db ->
-            val rs = db.query("cart/GetUserCartQuery", userId)
+            val rs = db.querySql("select productId, quantity from UserProductCart where userId = ?;", userId)
             while (rs.next()) {
                 val productCart = UserProductCart.fromResultSet(rs)
                 result.add(productCart)
@@ -37,5 +40,4 @@ class MySqlCartRepository : CartRepository, ResourceDatabaseTableInitializer(lis
         }
         return Cart(userId, result)
     }
-
 }

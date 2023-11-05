@@ -7,21 +7,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="97b4ebaa-10cf-4e30-946b-a3fd6b90df8f" name="Changes" comment="Add some fixes">
-      <change beforePath="$PROJECT_DIR$/.idea/kotlinc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/kotlinc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="97b4ebaa-10cf-4e30-946b-a3fd6b90df8f" name="Changes" comment="Add update sql">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/fragments/head.html" beforeDir="false" afterPath="$PROJECT_DIR$/resources/fragments/head.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/fragments/layout.html" beforeDir="false" afterPath="$PROJECT_DIR$/resources/fragments/layout.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/cart.html" beforeDir="false" afterPath="$PROJECT_DIR$/resources/cart.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/fragments/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/resources/fragments/navbar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/resources/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/resources/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/sql/carts/AddProductToCartMutation.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/sql/carts/GetUserCartQuery.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/sql/users/UsersTableMigration.sql" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sql/users/UsersTableMigration.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controllers/BaseController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/BaseController.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controllers/CartControllers.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/CartControllers.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controllers/LoginController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/LoginController.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/domain/cart/Cart.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/cart/Cart.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/domain/cart/CartRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/cart/CartRepository.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/domain/product/ProductRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/product/ProductRepository.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/domain/user/User.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/user/User.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/domain/user/UserRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/user/UserRepository.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/domain/cart/MySqlCartRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/cart/MySqlCartRepository.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/infrastructure/CookieUtils.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/infrastructure/CookieUtils.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/infrastructure/MySqlDatabase.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/infrastructure/MySqlDatabase.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,10 +54,10 @@
         <option value="Kotlin File" />
         <option value="Kotlin Interface" />
         <option value="Kotlin Data Class" />
-        <option value="Class" />
         <option value="Interface" />
         <option value="HTML File" />
         <option value="Kotlin Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -111,7 +111,7 @@
     "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
     "jdk.selected.JAVA_MODULE": "17",
-    "last_opened_file_path": "C:/Users/Legu/IdeaProjects/shopping/resources/sql/carts",
+    "last_opened_file_path": "C:/Users/Legu/IdeaProjects/shopping/src/controllers",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
@@ -121,11 +121,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Legu\IdeaProjects\shopping\src\controllers" />
       <recent name="C:\Users\Legu\IdeaProjects\shopping\resources\sql\carts" />
       <recent name="C:\Users\Legu\IdeaProjects\shopping\resources\sql\users" />
       <recent name="C:\Users\Legu\IdeaProjects\shopping\resources\sql\products" />
       <recent name="C:\Users\Legu\IdeaProjects\shopping\resources\sql" />
-      <recent name="C:\Users\Legu\IdeaProjects\shopping\resources\products" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Legu\IdeaProjects\shopping\resources\sql\" />
@@ -147,6 +147,7 @@
       <recent name="" />
     </key>
     <key name="CopyKotlinDeclarationDialog.RECENTS_KEY">
+      <recent name="domain.order" />
       <recent name="domain.cart" />
       <recent name="domain.user" />
       <recent name="controllers" />
@@ -407,7 +408,23 @@
       <option name="project" value="LOCAL" />
       <updated>1698006155600</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Add MySql db and Cookies">
+      <option name="closed" value="true" />
+      <created>1698969338527</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1698969338527</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Add update sql">
+      <option name="closed" value="true" />
+      <created>1698969440698</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1698969440698</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -425,7 +442,9 @@
     <MESSAGE value="Fix weld" />
     <MESSAGE value="Add edit action" />
     <MESSAGE value="Add some fixes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add some fixes" />
+    <MESSAGE value="Add MySql db and Cookies" />
+    <MESSAGE value="Add update sql" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add update sql" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

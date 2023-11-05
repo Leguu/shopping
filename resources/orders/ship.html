@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml"
+    th:replace="~{fragments/layout :: layout(~{::title}, ~{::body})}">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ship order</title>
+</head>
+
+<body>
+    <form method="post" th:action="'/orders/'+ ${order.orderId} + '/ship'" class="container-sm">
+        <div style="display: flex; flex-direction: column">
+            <label class="form-label">
+                Tracking ID
+                <input required name="trackingId" class="form-control" />
+            </label>
+
+            <button type="submit" class="btn btn-primary">Ship order</button>
+        </div>
+    </form>
+
+</body>
+
+</html>

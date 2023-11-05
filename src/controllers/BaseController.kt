@@ -1,6 +1,7 @@
 package controllers
 
 import domain.cart.CartRepository
+import domain.order.OrderRepository
 import domain.product.ProductRepository
 import domain.user.User
 import domain.user.UserRepository
@@ -20,22 +21,28 @@ import org.thymeleaf.exceptions.TemplateInputException
 abstract class BaseController : HttpServlet() {
     @Inject
     protected lateinit var productRepository: ProductRepository
+
     @Inject
     protected lateinit var cartRepository: CartRepository
+
     @Inject
     protected lateinit var userRepository: UserRepository
+
     @Inject
     protected lateinit var templateEngine: ITemplateEngine
+
+    @Inject
+    protected lateinit var orderRepository: OrderRepository
 
     private val userIdAttribute = "userId"
 
     protected fun HttpServletRequest.assertIsAdmin() {
-        if(getUser()?.isAdmin != true) {
+        if (getUser()?.isAdmin != true) {
             throw Unauthorized()
         }
     }
 
-    private fun <T>HttpServletResponse.doWithErrorHandling(context: Context, doFun: () -> T): T? {
+    private fun <T> HttpServletResponse.doWithErrorHandling(context: Context, doFun: () -> T): T? {
         try {
             return doFun()
         } catch (e: Unauthorized) {
@@ -55,7 +62,7 @@ abstract class BaseController : HttpServlet() {
         val context = getBasicContext(req, resp)
 
         resp.doWithErrorHandling(context) {
-            val templateName =  get(req, resp, context)
+            val templateName = get(req, resp, context)
             if (templateName != null) {
                 resp.process(templateName, context)
             }
@@ -83,7 +90,9 @@ abstract class BaseController : HttpServlet() {
         }
     }
 
-    open fun get(req: HttpServletRequest, resp: HttpServletResponse, context: Context): String? { return null }
+    open fun get(req: HttpServletRequest, resp: HttpServletResponse, context: Context): String? {
+        return null
+    }
 
     open fun post(req: HttpServletRequest, resp: HttpServletResponse) {}
 
@@ -95,6 +104,10 @@ abstract class BaseController : HttpServlet() {
         val context = Context(req.locale)
         context.setVariable("user", req.getUser() ?: User(0, "", "", false))
         return context
+    }
+
+    fun HttpServletResponse.signOut() {
+        this.setCookie(userIdAttribute, "")
     }
 
     fun HttpServletResponse.tryLogin(username: String, password: String) {
