@@ -2,13 +2,17 @@
 
 For SOEN 387.
 
-**Please note: built-in admin username is `admin`, password `secret`**
+**Please note: built-in admin password is `secret`**
+
+## Testing instructions
+
+Follow the instructions for compilation. Run `gradle test` in the root source directory. If all tests succeed, you'll simply see build succeeded and nothing more.
 
 ## Compilation instructions
 
 1) Ensure you have Gradle installed (https://gradle.org/)
    1) It's available in most package managers like chocolatey and homebrew
-2) Run `gradle war` in the root directory
+2) Run `gradle war` in the root source directory
    1) Gradle will automatically install the dependencies found in `build.gradle.ts`
 3) If successful, the built war file will be found under `build/libs/shopping.war`
 
@@ -18,4 +22,4 @@ For SOEN 387.
 
 Try and use the pre-built war file. If that still doesn't work, you may judge a deployed version at https://shopping.legu.dev
 
-I pinky-promise the deployed version is identical to the submitted version. Verify that it is my app by looking for the commit ID in the footer - it should match the head commit ID in the submitted folder that you can find with `git log`. 
+I pinky-promise the deployed version is identical to the submitted version. Verify that it is my app by looking for the commit ID in the footer - it should match the head commit ID in the submitted folder that you can find with `git log`.

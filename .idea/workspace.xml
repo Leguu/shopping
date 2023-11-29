@@ -7,40 +7,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="97b4ebaa-10cf-4e30-946b-a3fd6b90df8f" name="Changes" comment="Add user seeding">
-      <change afterPath="$PROJECT_DIR$/tests/domain/order/DatabaseOrderRepositoryTest.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/domain/user/DatabaseUserRepositoryTest.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/fragments/layout.html" beforeDir="false" afterPath="$PROJECT_DIR$/resources/fragments/layout.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/fragments/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/resources/fragments/navbar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/resources/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/signup.html" beforeDir="false" afterPath="$PROJECT_DIR$/resources/signup.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sql/carts/CartTableMigration.sql" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sql/carts/CartTableMigration.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sql/orders/OrdersTableMigration.sql" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sql/orders/OrdersTableMigration.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sql/products/ProductsTableMigration.sql" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sql/products/ProductsTableMigration.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sql/users/InsertUserMutation.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sql/users/UserByIdQuery.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sql/users/UserByNamePasswordQuery.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sql/users/UsersTableMigration.sql" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sql/users/UsersTableMigration.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/users.csv" beforeDir="false" afterPath="$PROJECT_DIR$/resources/users.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/BaseController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/BaseController.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/LoginController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/LoginController.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/domain/cart/MySqlCartRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/cart/DatabaseCartRepository.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/domain/order/MySqlOrderRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/order/DatabaseOrderRepository.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/domain/order/OrderRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/order/OrderRepository.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/domain/product/InMemoryProductRepository.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/domain/product/MySqlProductRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/product/DatabaseProductRepository.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/domain/user/InMemoryUserRepository.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/domain/user/MySqlUserRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/user/DatabaseUserRepository.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/domain/user/User.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/user/User.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/domain/user/UserRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/user/UserRepository.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/infrastructure/CookieUtils.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/infrastructure/CookieUtils.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/infrastructure/MySqlDatabase.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/infrastructure/database/Database.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/infrastructure/ResourceDatabaseTableInitializer.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/infrastructure/ResourceDatabaseTableInitializer.kt" afterDir="false" />
-    </list>
+    <list default="true" id="97b4ebaa-10cf-4e30-946b-a3fd6b90df8f" name="Changes" comment="New update for assignment 3" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -366,8 +333,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.DatabaseUserRepositoryTest.setPassword" />
         <item itemvalue="Gradle.DatabaseOrderRepositoryTest.setOrderOwner" />
+        <item itemvalue="Gradle.DatabaseUserRepositoryTest.setPassword" />
         <item itemvalue="Gradle.shopping [build]" />
         <item itemvalue="Gradle.shopping [war]" />
         <item itemvalue="Gradle.shopping [clean]" />
@@ -495,7 +462,15 @@
       <option name="project" value="LOCAL" />
       <updated>1699296539076</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="New update for assignment 3">
+      <option name="closed" value="true" />
+      <created>1701228827596</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1701228827596</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -521,7 +496,8 @@
     <MESSAGE value="Add MySql db and Cookies" />
     <MESSAGE value="Add update sql" />
     <MESSAGE value="Add user seeding" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add user seeding" />
+    <MESSAGE value="New update for assignment 3" />
+    <option name="LAST_COMMIT_MESSAGE" value="New update for assignment 3" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
