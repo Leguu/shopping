@@ -1,8 +1,7 @@
 CREATE TABLE IF NOT EXISTS Products (
-	id int key not null auto_increment,
-    slug varchar(255) not null,
-    name varchar(255) not null,
-    description varchar(255) not null,
-    price decimal not null,
-    PRIMARY KEY (id)
+	id INTEGER PRIMARY KEY,
+    slug TEXT not null,
+    name TEXT not null,
+    description TEXT not null,
+    price decimal not null
 );

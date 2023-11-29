@@ -28,13 +28,22 @@
           <li th:if="${user.id}" class="nav-item">
             <a class="nav-link" href="/orders">Orders</a>
           </li>
+          <li th:if="${user.id}" class="nav-item">
+            <a class="nav-link" href="/recovery">Recover Order</a>
+          </li>
+          <li th:if="${user.isAdmin}" class="nav-item">
+            <a class="nav-link" href="/users">Users</a>
+          </li>
         </ul>
 
-        <span class="navbar-text mr-4" th:if="${user.id}" th:text="${user.name}"></span>
+        <span class="navbar-text mr-4" th:if="${user.id}">Signed in</span>
 
         <ul class="navbar-nav mx-2">
           <li class="nav-item" th:if="${user.id}">
             <a href="/signout"><button class="btn btn-primary">Sign out</button></a>
+          </li>
+          <li class="nav-item" th:if="${user.id}">
+            <a href="/change"><button class="btn btn-primary">Change pass</button></a>
           </li>
           <li class="nav-item" th:unless="${user.id}">
             <a href="/signup"><button class="btn btn-primary">Sign up</button></a>

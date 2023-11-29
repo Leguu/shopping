@@ -1,5 +1,6 @@
 plugins {
-    kotlin("jvm") version "1.9.0"
+    java
+    kotlin("jvm") version "1.9.10"
     kotlin("plugin.serialization") version "1.9.20"
     war
 }
@@ -12,6 +13,7 @@ repositories {
 }
 
 dependencies {
+    testImplementation("org.junit.jupiter:junit-jupiter:5.8.1")
     compileOnly("jakarta.servlet:jakarta.servlet-api:6.0.0")
 
     implementation("org.thymeleaf:thymeleaf:3.1.2.RELEASE")
@@ -22,10 +24,14 @@ dependencies {
 
     implementation("commons-io:commons-io:2.15.0")
 
-    implementation("com.mysql:mysql-connector-j:8.2.0")
+    implementation("org.xerial:sqlite-jdbc:3.44.1.0")
+    implementation("org.slf4j:slf4j-api:1.7.36")
+
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.0")
 
     implementation(kotlin("stdlib-jdk8"))
+
+    testImplementation(kotlin("test"))
 }
 
 sourceSets {
@@ -37,8 +43,18 @@ sourceSets {
             setSrcDirs(listOf("resources"))
         }
     }
+    test {
+        kotlin {
+            setSrcDirs(listOf("tests"))
+        }
+    }
 }
 
 kotlin {
-    jvmToolchain(8)
+    jvmToolchain(17)
+}
+
+tasks.test {
+    useJUnitPlatform()
+    environment("env", "testing")
 }

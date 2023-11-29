@@ -1,36 +1,54 @@
-package infrastructure
+package infrastructure.database
 
-import java.io.Closeable
+import infrastructure.ClassLoaderUtil
+import jakarta.inject.Named
+import jakarta.inject.Singleton
 import java.sql.Connection
 import java.sql.DriverManager
 import java.sql.PreparedStatement
 import java.sql.ResultSet
 
-class MySqlDatabase : Closeable {
-    var con: Connection;
+@Named("Database")
+@Singleton
+class Database : IDatabase {
+    companion object {
+        private var con: Connection? = null
 
-    init {
-        Class.forName("com.mysql.cj.jdbc.Driver")
-        val con = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/shopping", "dbuser", "dbpass")
-        con.autoCommit = true
-        this.con = con
+        private fun getConnection(dbName: String): Connection {
+            if (con == null) {
+                Class.forName("org.sqlite.JDBC");
+                con = DriverManager.getConnection("jdbc:sqlite:${dbName}")
+                con?.autoCommit = true
+            }
+
+            return con ?: throw InternalError()
+        }
     }
 
-    override fun close() {
-        con.close()
+    private var dbName = "data.db"
+
+    constructor()
+
+    constructor(dbName: String) {
+        this.dbName = dbName
     }
 
-    fun query(path: String): ResultSet {
+    override val con: Connection
+        get() {
+            return getConnection(this.dbName)
+        }
+
+    override fun query(path: String): ResultSet {
         val queryStr = ClassLoaderUtil.getResourceContent("sql/$path.sql")
         return con.createStatement().executeQuery(queryStr)
     }
 
-    fun query(path: String, vararg variables: Any): ResultSet {
+    override fun query(path: String, vararg variables: Any): ResultSet {
         val queryStr = ClassLoaderUtil.getResourceContent("sql/$path.sql")
         return querySql(queryStr, *variables)
     }
 
-    fun querySql(sql: String, vararg variables: Any): ResultSet {
+    override fun querySql(sql: String, vararg variables: Any): ResultSet {
         val preparedStatement = con.prepareStatement(sql)
 
         variables.forEachIndexed { index, variable ->
@@ -40,7 +58,7 @@ class MySqlDatabase : Closeable {
         return preparedStatement.executeQuery()!!
     }
 
-    fun updateSql(sql: String, vararg variables: Any): Boolean {
+    override fun updateSql(sql: String, vararg variables: Any): Boolean {
         val preparedStatement = con.prepareStatement(sql)
 
         variables.forEachIndexed { index, variable ->
@@ -50,17 +68,18 @@ class MySqlDatabase : Closeable {
         return preparedStatement.execute()
     }
 
-    fun update(path: String, vararg variables: Any): Boolean {
+    override fun update(path: String, vararg variables: Any): Boolean {
         val updateStr = ClassLoaderUtil.getResourceContent("sql/$path.sql")
         return updateSql(updateStr, *variables)
     }
 
-    fun batch(path: String) {
+    override fun batch(path: String) {
         val queryStr = ClassLoaderUtil.getResourceContent("sql/$path.sql")
+
         val queries = queryStr
             .split(';')
-            .dropLast(1)
             .map { it.trim() }
+            .filter { it.isNotEmpty() }
             .map { "$it;" }
 
         val statement = con.createStatement()
@@ -71,14 +90,15 @@ class MySqlDatabase : Closeable {
 
         statement.executeBatch()
     }
-
 }
+
 fun PreparedStatement.set(index: Int, variable: Any) {
     val reassigned = index + 1
     when (variable) {
         is String -> this.setString(reassigned, variable)
         is Int -> this.setInt(reassigned, variable)
         is Double -> this.setDouble(reassigned, variable)
-        else -> throw NotImplementedError()
+        is Boolean -> this.setBoolean(reassigned, variable)
+        else -> throw NotImplementedError("Variable $variable is of type ${variable::class.java.typeName}")
     }
 }

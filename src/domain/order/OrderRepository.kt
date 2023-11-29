@@ -6,5 +6,6 @@ interface OrderRepository {
     fun getOrder(orderId: Int): Order
     fun shipOrder(orderId: Int, trackingId: String)
     fun createOrder(userId: Int, address: String)
+    fun setOrderOwner(userId: Int, orderId: Int)
 }
 

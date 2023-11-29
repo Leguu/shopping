@@ -2,7 +2,10 @@ package domain.user
 
 interface UserRepository {
     fun getUserById(id: Int): User?
-    fun createUser(name: String, password: String): User
-    fun validateUsernamePassword(username: String, password: String): User
+    fun createUser(password: String): User
+    fun validateUsernamePassword(password: String): User
+    fun getAllUsers(): List<User>
+    fun setUserIsAdmin(userId: Int, isAdmin: Boolean)
+    fun setPassword(userId: Int, password: String)
 }
 

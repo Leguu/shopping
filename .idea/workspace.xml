@@ -7,9 +7,39 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="97b4ebaa-10cf-4e30-946b-a3fd6b90df8f" name="Changes" comment="Add update sql">
+    <list default="true" id="97b4ebaa-10cf-4e30-946b-a3fd6b90df8f" name="Changes" comment="Add user seeding">
+      <change afterPath="$PROJECT_DIR$/tests/domain/order/DatabaseOrderRepositoryTest.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/domain/user/DatabaseUserRepositoryTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/domain/user/MySqlUserRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/user/MySqlUserRepository.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/fragments/layout.html" beforeDir="false" afterPath="$PROJECT_DIR$/resources/fragments/layout.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/fragments/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/resources/fragments/navbar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/resources/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/signup.html" beforeDir="false" afterPath="$PROJECT_DIR$/resources/signup.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/sql/carts/CartTableMigration.sql" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sql/carts/CartTableMigration.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/sql/orders/OrdersTableMigration.sql" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sql/orders/OrdersTableMigration.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/sql/products/ProductsTableMigration.sql" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sql/products/ProductsTableMigration.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/sql/users/InsertUserMutation.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/sql/users/UserByIdQuery.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/sql/users/UserByNamePasswordQuery.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/sql/users/UsersTableMigration.sql" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sql/users/UsersTableMigration.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/users.csv" beforeDir="false" afterPath="$PROJECT_DIR$/resources/users.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/BaseController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/BaseController.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/LoginController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/LoginController.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/domain/cart/MySqlCartRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/cart/DatabaseCartRepository.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/domain/order/MySqlOrderRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/order/DatabaseOrderRepository.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/domain/order/OrderRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/order/OrderRepository.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/domain/product/InMemoryProductRepository.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/domain/product/MySqlProductRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/product/DatabaseProductRepository.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/domain/user/InMemoryUserRepository.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/domain/user/MySqlUserRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/user/DatabaseUserRepository.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/domain/user/User.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/user/User.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/domain/user/UserRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/user/UserRepository.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/infrastructure/CookieUtils.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/infrastructure/CookieUtils.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/infrastructure/MySqlDatabase.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/infrastructure/database/Database.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/infrastructure/ResourceDatabaseTableInitializer.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/infrastructure/ResourceDatabaseTableInitializer.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,8 +74,9 @@
         <option value="Kotlin Data Class" />
         <option value="Interface" />
         <option value="HTML File" />
-        <option value="Kotlin Class" />
         <option value="Class" />
+        <option value="Kotlin Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -90,37 +121,42 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Legu/IdeaProjects/shopping/src/controllers&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "jdk.selected.JAVA_MODULE": "17",
+    "last_opened_file_path": "C:/Users/Legu/IdeaProjects/shopping/resources",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Legu\IdeaProjects\shopping\resources" />
       <recent name="C:\Users\Legu\IdeaProjects\shopping\src\controllers" />
+      <recent name="C:\Users\Legu\IdeaProjects\shopping\resources\orders" />
+      <recent name="C:\Users\Legu\IdeaProjects\shopping\libs" />
       <recent name="C:\Users\Legu\IdeaProjects\shopping\resources\sql\carts" />
-      <recent name="C:\Users\Legu\IdeaProjects\shopping\resources\sql\users" />
-      <recent name="C:\Users\Legu\IdeaProjects\shopping\resources\sql\products" />
-      <recent name="C:\Users\Legu\IdeaProjects\shopping\resources\sql" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Legu\IdeaProjects\shopping\src\infrastructure\database" />
+      <recent name="C:\Users\Legu\IdeaProjects\shopping\resources" />
       <recent name="C:\Users\Legu\IdeaProjects\shopping\resources\sql\" />
       <recent name="C:\Users\Legu\IdeaProjects\shopping\resources\sql\products" />
       <recent name="C:\Users\Legu\IdeaProjects\shopping\src" />
-      <recent name="C:\Users\Legu\IdeaProjects\shopping\src\infrastructure" />
-      <recent name="C:\Users\Legu\IdeaProjects\shopping\src\domain\cart" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
     </key>
     <key name="CreateKotlinClassDialog.RecentsKey">
       <recent name="domain.product" />
@@ -134,6 +170,13 @@
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="" />
     </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="domain.user" />
+      <recent name="domain.order" />
+    </key>
+    <key name="KotlinExtractInterfaceDialog.RECENT_KEYS">
+      <recent name="infrastructure" />
+    </key>
     <key name="CopyKotlinDeclarationDialog.RECENTS_KEY">
       <recent name="domain.order" />
       <recent name="domain.cart" />
@@ -141,30 +184,56 @@
       <recent name="controllers" />
     </key>
   </component>
-  <component name="RunManager" selected="Smart Tomcat.Tomcat 10">
-    <configuration name="shopping [buildKotlinToolingMetadata]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+  <component name="RunManager" selected="Gradle.shopping [test]">
+    <configuration name="DatabaseOrderRepositoryTest.setOrderOwner" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
+        <option name="scriptParameters" value="" />
         <option name="taskDescriptions">
           <list />
         </option>
         <option name="taskNames">
           <list>
-            <option value="buildKotlinToolingMetadata" />
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;domain.order.DatabaseOrderRepositoryTest.setOrderOwner&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
       </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>false</RunAsTest>
+      <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="shopping [buildNeeded]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="DatabaseUserRepositoryTest.setPassword" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;domain.user.DatabaseUserRepositoryTest.setPassword&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="shopping [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -175,7 +244,7 @@
         </option>
         <option name="taskNames">
           <list>
-            <option value="buildNeeded" />
+            <option value="build" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -208,18 +277,23 @@
       <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="shopping [testClasses]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="shopping [test]" type="GradleRunConfiguration" factoryName="Gradle">
       <ExternalSystemSettings>
+        <option name="env">
+          <map>
+            <entry key="env" value="testing" />
+          </map>
+        </option>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
+        <option name="scriptParameters" value="" />
         <option name="taskDescriptions">
           <list />
         </option>
         <option name="taskNames">
           <list>
-            <option value="testClasses" />
+            <option value="test" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -267,7 +341,7 @@
         </map>
       </option>
       <option name="extraClassPath" value="" />
-      <option name="port" value="4433" />
+      <option name="port" value="4411" />
       <option name="tomcatInfo">
         <TomcatInfo>
           <option name="name" value="Apache Tomcat/10.1.13" />
@@ -282,20 +356,21 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="Gradle.shopping [test]" />
+      <item itemvalue="Gradle.DatabaseOrderRepositoryTest.setOrderOwner" />
+      <item itemvalue="Gradle.DatabaseUserRepositoryTest.setPassword" />
+      <item itemvalue="Gradle.shopping [build]" />
       <item itemvalue="Gradle.shopping [clean]" />
-      <item itemvalue="Gradle.shopping [buildKotlinToolingMetadata]" />
-      <item itemvalue="Gradle.shopping [buildNeeded]" />
-      <item itemvalue="Gradle.shopping [testClasses]" />
       <item itemvalue="Gradle.shopping [war]" />
       <item itemvalue="Smart Tomcat.Tomcat 10" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.DatabaseUserRepositoryTest.setPassword" />
+        <item itemvalue="Gradle.DatabaseOrderRepositoryTest.setOrderOwner" />
+        <item itemvalue="Gradle.shopping [build]" />
         <item itemvalue="Gradle.shopping [war]" />
         <item itemvalue="Gradle.shopping [clean]" />
-        <item itemvalue="Gradle.shopping [testClasses]" />
-        <item itemvalue="Gradle.shopping [buildNeeded]" />
-        <item itemvalue="Gradle.shopping [buildKotlinToolingMetadata]" />
       </list>
     </recent_temporary>
   </component>
@@ -412,12 +487,24 @@
       <option name="project" value="LOCAL" />
       <updated>1698969440698</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Add user seeding">
+      <option name="closed" value="true" />
+      <created>1699296539076</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1699296539076</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="UnknownFeatures">
     <option featureType="dependencySupport" implementationName="executable:docker" />
+    <option featureType="dependencySupport" implementationName="java:jakarta.enterprise:jakarta.enterprise.cdi-api" />
+    <option featureType="dependencySupport" implementationName="java:org.jboss.weld:weld-core-impl" />
     <option featureType="com.intellij.fileTypeFactory" implementationName="*.csv" />
+    <option featureType="dependencySupport" implementationName="java:com.google.protobuf:protobuf-java" />
+    <option featureType="dependencySupport" implementationName="java:org.thymeleaf:thymeleaf" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Add stuff" />
@@ -433,7 +520,8 @@
     <MESSAGE value="Add some fixes" />
     <MESSAGE value="Add MySql db and Cookies" />
     <MESSAGE value="Add update sql" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add update sql" />
+    <MESSAGE value="Add user seeding" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add user seeding" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -442,6 +530,16 @@
           <properties class="java.lang.InternalError" package="java.lang" />
           <option name="timeStamp" value="1" />
         </breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/controllers/RecoveryController.kt</url>
+          <line>18</line>
+          <option name="timeStamp" value="19" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/domain/user/DatabaseUserRepository.kt</url>
+          <line>24</line>
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>

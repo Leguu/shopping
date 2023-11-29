@@ -1,12 +1,15 @@
 package infrastructure
 
+
+import infrastructure.database.Database
+
 open class ResourceDatabaseTableInitializer(resourcePaths: List<String>) {
     init {
-        resourcePaths.forEach {
-            MySqlDatabase().use { db ->
-                db.batch(it)
+        if (System.getenv("env") != "testing") {
+            resourcePaths.forEach {
+                Database().batch(it)
+                println("Applied migration $it")
             }
-            println("Applied migration $it")
         }
     }
 }

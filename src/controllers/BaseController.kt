@@ -7,6 +7,7 @@ import domain.user.User
 import domain.user.UserRepository
 import infrastructure.CookieUtils.Companion.getCookie
 import infrastructure.CookieUtils.Companion.setCookie
+import infrastructure.database.IDatabase
 import infrastructure.NotFound
 import infrastructure.Unauthorized
 import jakarta.inject.Inject
@@ -33,6 +34,9 @@ abstract class BaseController : HttpServlet() {
 
     @Inject
     protected lateinit var orderRepository: OrderRepository
+
+    @Inject
+    protected lateinit var database: IDatabase
 
     private val userIdAttribute = "userId"
 
@@ -102,7 +106,7 @@ abstract class BaseController : HttpServlet() {
 
     private fun getBasicContext(req: HttpServletRequest, resp: HttpServletResponse): Context {
         val context = Context(req.locale)
-        context.setVariable("user", req.getUser() ?: User(0, "", "", false))
+        context.setVariable("user", req.getUser() ?: User(0, "", false))
         return context
     }
 
@@ -110,8 +114,8 @@ abstract class BaseController : HttpServlet() {
         this.setCookie(userIdAttribute, "")
     }
 
-    fun HttpServletResponse.tryLogin(username: String, password: String) {
-        val user = userRepository.validateUsernamePassword(username, password)
+    fun HttpServletResponse.tryLogin(password: String) {
+        val user = userRepository.validateUsernamePassword(password)
 
         this.setCookie(userIdAttribute, user.id)
     }

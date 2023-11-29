@@ -14,7 +14,7 @@ class CookieUtils {
         }
 
         inline fun <reified T> HttpServletRequest.getCookie(key: String): T? {
-            val cookie = this.cookies.find { c -> c.name == key } ?: return null
+            val cookie = this.cookies?.find { c -> c.name == key } ?: return null
 
             return try {
                 Json.decodeFromString<T>(cookie.value)

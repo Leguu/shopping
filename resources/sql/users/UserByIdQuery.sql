@@ -1,1 +1,0 @@
-SELECT id, name, password, isAdmin FROM Users WHERE id = ?;
